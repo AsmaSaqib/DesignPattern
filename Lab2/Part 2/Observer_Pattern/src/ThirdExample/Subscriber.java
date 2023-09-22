@@ -10,5 +10,5 @@ package ThirdExample;
  * @author sp20-bse-072
  */
 public interface Subscriber {
-    
+    void update(String update);
 }

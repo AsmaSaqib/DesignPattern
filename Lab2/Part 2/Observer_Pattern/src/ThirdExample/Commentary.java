@@ -15,7 +15,6 @@ public class Commentary implements Publisher{
 	ArrayList<Subscriber> subscribers = new ArrayList<Subscriber>();
 	private String desc;
 	
-        @Override
 	public void subsrcibe(Subscriber s) {
 		if(!subscribers.contains(s)){
 			subscribers.add(s);
@@ -23,14 +22,12 @@ public class Commentary implements Publisher{
 		
 	}
 
-        @Override
 	public void unSubsrcibe(Subscriber s) {
 		if(subscribers.contains(s)){
 			subscribers.remove(s);
 		}	
 	}
 
-        @Override
 	public void notifySubscribers() {
 		for(Subscriber s:subscribers){
 			s.update(desc);
