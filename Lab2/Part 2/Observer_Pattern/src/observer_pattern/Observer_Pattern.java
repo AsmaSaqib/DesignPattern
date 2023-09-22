@@ -16,6 +16,12 @@ public class Observer_Pattern {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.out.println("Enter Text : ");
+        EventSource eventSource = new EventSource();
+        
+        eventSource.addObserver(event -> System.out.println("Received response: " + event));
+
+        eventSource.scanSystemIn();
     }
     
 }
