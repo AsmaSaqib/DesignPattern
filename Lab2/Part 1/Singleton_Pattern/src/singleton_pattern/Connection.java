@@ -16,7 +16,8 @@ private static Connection instance;
 	}
 	public static Connection getInstance(){
 		if(instance == null){
-			instance = new Connection();
+                    synchronized (Connection.class){
+			instance = new Connection();}
 		}
 		return instance;
 	}

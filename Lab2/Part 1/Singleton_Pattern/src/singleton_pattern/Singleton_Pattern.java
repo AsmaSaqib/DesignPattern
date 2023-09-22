@@ -14,9 +14,12 @@ public class Singleton_Pattern {
 
     public static void main(String[] args) {
         // TODO code application logic here
-        Connection c = Connection.getInstance();
-		c.getData();
-
+//        Connection c = Connection.getInstance();
+//		c.getData();
+     Configuration config = Configuration.getInstance();
+		System.out.println(config.getValue("mode"));
+		System.out.println(config.getValue("font-size"));
+		System.out.println(config.getValue("font-type"));
     }
     
 }
