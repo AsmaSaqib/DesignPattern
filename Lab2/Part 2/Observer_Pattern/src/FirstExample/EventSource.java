@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package observer_pattern;
+package FirstExample;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -20,6 +20,10 @@ public class EventSource {
   
     public void addObserver(Observer observer) {
         observers.add(observer);
+    }
+    //Detach method Implementation.
+    public void removeObserver(Observer observer){
+        observers.remove(observer);
     }
   
     public void scanSystemIn() {

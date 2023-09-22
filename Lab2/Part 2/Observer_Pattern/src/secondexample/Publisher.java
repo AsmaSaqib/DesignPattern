@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package observer_pattern;
+package secondexample;
 
 /**
  *
  * @author sp20-bse-072
  */
-public interface Observer {
-    void Update(String event);
+public interface Publisher {
+    
 }
