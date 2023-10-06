@@ -15,6 +15,9 @@ public class Demo {
         DataSourceDecorator encoded = new CompressionDecorator(
                                          new EncryptionDecorator(
                                              new FileDataSource("out/OutputDemo.txt")));
+        DataSourceDecorator encoded1 = new EncryptionDecorator(
+                                         new CompressionDecorator(
+                                             new FileDataSource("out/OutputDemo.txt")));
         encoded.writeData(salaryRecords);
         DataSource plain = new FileDataSource("out/OutputDemo.txt");
 
