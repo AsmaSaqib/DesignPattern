@@ -11,29 +11,46 @@ package chain.of.responsibility;
  */
 public class ChainOfResponsibilityDemo {
 
-   private static AbstractLogger getChainOfLoggers(){
+//   private static AbstractLogger getChainOfLoggers(){
+//
+//      AbstractLogger errorLogger = new ErrorLogger(AbstractLogger.ERROR);
+//      AbstractLogger fileLogger = new FileLogger(AbstractLogger.DEBUG);
+//      AbstractLogger consoleLogger = new ConsoleLogger(AbstractLogger.INFO);
+//
+//      errorLogger.setNextLogger(fileLogger);
+//      fileLogger.setNextLogger(consoleLogger);
+//
+//      return errorLogger;	
+//   }
+   private static AbstractLogger getSecondChainOfLoggers(){
 
       AbstractLogger errorLogger = new ErrorLogger(AbstractLogger.ERROR);
-      AbstractLogger fileLogger = new FileLogger(AbstractLogger.DEBUG);
+      AbstractLogger databaselogger = new DatabaseLogger(AbstractLogger.WARNING);
       AbstractLogger consoleLogger = new ConsoleLogger(AbstractLogger.INFO);
 
-      errorLogger.setNextLogger(fileLogger);
-      fileLogger.setNextLogger(consoleLogger);
+      errorLogger.setNextLogger(databaselogger);
+      databaselogger.setNextLogger(consoleLogger);
 
       return errorLogger;	
    }
 
    public static void main(String[] args) {
-      AbstractLogger loggerChain = getChainOfLoggers();
-
-      loggerChain.logMessage(AbstractLogger.INFO, 
-         "This is an information.");
-
-      loggerChain.logMessage(AbstractLogger.DEBUG, 
-         "This is an debug level information.");
-
-      loggerChain.logMessage(AbstractLogger.ERROR, 
-         "This is an error information.");
-   }
+//      AbstractLogger loggerChain = getChainOfLoggers();
+//
+//      loggerChain.logMessage(AbstractLogger.INFO, 
+//         "This is an information.");
+//
+//      loggerChain.logMessage(AbstractLogger.DEBUG, 
+//         "This is an debug level information.");
+//
+//      loggerChain.logMessage(AbstractLogger.ERROR, 
+//         "This is an error information.");
+    AbstractLogger loggerChain = getSecondChainOfLoggers();
+    loggerChain.logOnceMessage(AbstractLogger.INFO, "This is an Information");
+     loggerChain.logOnceMessage(AbstractLogger.DEBUG, "This is an debug level information.");
+      loggerChain.logOnceMessage(AbstractLogger.ERROR, "This is an error information");
+      loggerChain.logOnceMessage(5, "This is an unknow information");
+  }
+ 
     
 }
