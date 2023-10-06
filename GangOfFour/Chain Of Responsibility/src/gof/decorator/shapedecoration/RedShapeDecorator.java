@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package decorator;
+package gof.decorator.shapedecoration;
 
 /**
  *
  * @author sp20-bse-072
  */
 public class RedShapeDecorator extends ShapeDecorator {
-
+  private int Price=90;
    public RedShapeDecorator(Shape decoratedShape) {
       super(decoratedShape);		
    }
@@ -19,6 +19,7 @@ public class RedShapeDecorator extends ShapeDecorator {
    public void draw() {
       decoratedShape.draw();	       
       setRedBorder(decoratedShape);
+      System.out.println("Price is "+Price);
    }
 
    private void setRedBorder(Shape decoratedShape){

@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package decorator;
+package gof.decorator.shapedecoration;
 
 /**
  *
  * @author sp20-bse-072
  */
 public class Circle implements Shape {
-
+private int Price=23;
    @Override
    public void draw() {
       System.out.println("Shape: Circle");
+      System.out.println("Price is "+Price);
    }
 }

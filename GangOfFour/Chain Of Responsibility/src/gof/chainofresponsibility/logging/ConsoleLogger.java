@@ -1,4 +1,4 @@
-package chain.of.responsibility;
+package gof.chainofresponsibility.logging;
 
 
 public class ConsoleLogger extends AbstractLogger {

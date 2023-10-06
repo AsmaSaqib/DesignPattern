@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package decorator;
+package gof.decorator.shapedecoration.encodingexample;
 
 /**
  *
  * @author sp20-bse-072
  */
-public class Rectangle implements Shape {
+public interface DataSource {
+    void writeData(String data);
 
-   @Override
-   public void draw() {
-      System.out.println("Shape: Rectangle");
-   }
+    String readData();
 }
