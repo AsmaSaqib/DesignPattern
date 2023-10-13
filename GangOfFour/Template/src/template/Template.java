@@ -3,24 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication4;
+package template;
 
 /**
  *
  * @author abuba
  */
-public class JavaApplication4 {
+public class Template {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        NameRepository namesRepository = new NameRepository();
-
-      for(Iterator iter = namesRepository.getIterator(); iter.hasNext();){
-         String name = (String)iter.next();
-         System.out.println("Name : " + name);
-      } 	
+        // TODO code application logic here
     }
     
 }

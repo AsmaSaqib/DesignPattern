@@ -37,6 +37,10 @@ public class NameRepository implements Container {
             return names[index++];
          }
          return null;
-      }		
+      }	
+      
+      public Object moveToLast(){
+      return names[names.length-1];
+      }
    }
 }
